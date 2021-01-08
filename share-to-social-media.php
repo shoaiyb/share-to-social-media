@@ -53,10 +53,10 @@ class share_to_social_media{
 
 		wp_enqueue_style( 'stsm-share-main', plugins_url('css/style.css',__FILE__) );
 		
-		if( !empty($stsm_options['stsm-select-animations']) && in_array('360-rotation', $stsm_options['ss-select-animations']) && $stsm_options['ss-select-style'] != 'horizontal-with-count' )
+		if( !empty($stsm_options['stsm-select-animations']) && in_array('360-rotation', $stsm_options['stsm-select-animations']) && $stsm_options['stsm-select-style'] != 'horizontal-with-count' )
 		wp_enqueue_style( '360-rotation', plugins_url('css/360-rotate.css',__FILE__) );
 		
-		if( !empty($stsm_options['stsm-select-animations']) && in_array('tooltip', $stsm_options['ss-select-animations']) && $stsm_options['ss-select-style'] != 'horizontal-with-count' ){
+		if( !empty($stsm_options['stsm-select-animations']) && in_array('tooltip', $stsm_options['stsm-select-animations']) && $stsm_options['stsm-select-style'] != 'horizontal-with-count' ){
 			wp_enqueue_style( 'tooltipster-css', plugins_url('css/tooltipster.css',__FILE__) );
 			wp_enqueue_script( 'tooltipster-js', plugins_url('js/jquery.tooltipster.js',__FILE__), array('jquery') );
 		}		
@@ -130,8 +130,8 @@ class share_to_social_media{
 	public function get_defaults($preset=true) {
 		return array(
 				'stsm-select-style' => 'horizontal-w-c-circular',
-				'stsm-available-services' => $this->ss_get_services(),
-				'stsm-selected-services' => $preset ? $this->ss_get_services() : array(),
+				'stsm-available-services' => $this->stsm_get_services(),
+				'stsm-selected-services' => $preset ? $this->stsm_get_services() : array(),
 				'stsm-select-position' => $preset ? array('before-content') : array(),
 				'stsm-show-on' => $preset ? array('pages', 'posts') : array(),
 				'stsm-select-animations' => $preset ? array('tooltip') : array(),
