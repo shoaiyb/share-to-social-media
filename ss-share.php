@@ -131,7 +131,7 @@ class ss_share{
 		return array(
 				'ss-select-style' => 'horizontal-w-c-circular',
 				'ss-available-services' => $this->ss_get_services(),
-				'ss-selected-services' => $preset ? $this->s3_get_services() : array(),
+				'ss-selected-services' => $preset ? $this->ss_get_services() : array(),
 				'ss-select-position' => $preset ? array('before-content') : array(),
 				'ss-show-on' => $preset ? array('pages', 'posts') : array(),
 				'ss-select-animations' => $preset ? array('tooltip') : array(),
@@ -165,9 +165,9 @@ class ss_share{
 			$class = '';
 			if ( $ss_options['ss-select-style'] == 'horizontal-w-c-square' )
 				$class = 'horizontal-w-c-square';
-			elseif( $s3_options['ss-select-style'] == 'horizontal-w-c-r-border' )
+			elseif( $ss_options['ss-select-style'] == 'horizontal-w-c-r-border' )
 				$class = 'horizontal-w-c-r-border';
-			elseif( $s3_options['ss-select-style'] == 'horizontal-w-c-circular' )
+			elseif( $ss_options['ss-select-style'] == 'horizontal-w-c-circular' )
 				$class = 'horizontal-w-c-circular';	
 			$class .= ' s-share-w-c';
 
@@ -177,7 +177,7 @@ class ss_share{
 
 		$html_markup = '';
 		foreach ($service_markup_arr as $key => $value) {
-			if( in_array($key, (array)$s3_options['ss-selected-services']) ){
+			if( in_array($key, (array)$ss_options['ss-selected-services']) ){
 				$html_markup .= $value;
 			}
 		}
