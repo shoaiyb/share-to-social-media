@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Share To Social Media
+ * Plugin Name: Share To SM
  * Plugin URI: https://shoaiybsysa.ga/
  * Description: A simple social sharing plugin for displaying social media icons on your website to share Post/Page content
  * Version: 1.0
