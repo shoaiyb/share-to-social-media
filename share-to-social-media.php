@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Share To Sm
+ * Plugin Name: Share To Social Media
  * Plugin URI: https://shoaiybsysa.ga/
- * Description: A simple plugin for displaying social media icons to share Post/Page content
+ * Description: A simple social sharing plugin for displaying social media icons on your website to share Post/Page content
  * Version: 1.0
  * Author: shoaiyb sysa
  * Author URI: https://shoaiybsysa.ga
@@ -18,7 +18,7 @@ require_once('includes/template-buttons-with-count.php');
 require_once('includes/small-buttons.php');
 require_once('includes/services-js-array.php');
 
-class share_to_sm{
+class share_to_social_media{
 
 	public function __construct() {
 
@@ -196,7 +196,7 @@ class share_to_sm{
 	 */
 	public function ss_register_submenu(){
 
-		add_submenu_page( 'options-general.php', 'Share To Sm Settings', 'Share To Sm', 'activate_plugins', 'ss-share-settings', array( $this, 'ss_submenu_page' ) );
+		add_submenu_page( 'options-general.php', 'Share To Social Media Settings', 'Share To Social Media', 'activate_plugins', 'ss-share-settings', array( $this, 'ss_submenu_page' ) );
 
 	}
 
@@ -219,5 +219,5 @@ class share_to_sm{
 	}
 
 }
-new share_to_sm;
+new share_to_social_media;
 ?>
