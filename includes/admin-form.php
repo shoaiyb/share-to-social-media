@@ -51,7 +51,7 @@ function admin_form( $ss_options ){
 					After Content
 					<br/>
 					<p>
-					You can place the shortcode <code>[ss-share]</code> wherever you want to display the buttons.
+					You can place the shortcode <code>[share-to-sm]</code> wherever you want to display the buttons.
 				</p>
 				</td>
 			</tr>
