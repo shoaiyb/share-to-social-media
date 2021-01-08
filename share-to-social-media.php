@@ -23,61 +23,61 @@ class share_to_social_media{
 	public function __construct() {
 
 		// register our settings page
-		add_action( 'admin_menu', array( $this, 'ss_register_submenu' ) );
+		add_action( 'admin_menu', array( $this, 'stsm_register_submenu' ) );
 		
 		// register setting
-		add_action( 'admin_init', array( $this, 'ss_register_settings' ) );	
+		add_action( 'admin_init', array( $this, 'stsm_register_settings' ) );	
 
-		add_action( 'wp_enqueue_scripts', array( $this,'ss_load_styles_scripts' ) );	
-		add_action( 'admin_enqueue_scripts', array( $this,'ss_load_admin_styles_scripts' ) );
-		add_action('wp_footer', array($this,'ss_scripts_footer'));
+		add_action( 'wp_enqueue_scripts', array( $this,'stsm_load_styles_scripts' ) );	
+		add_action( 'admin_enqueue_scripts', array( $this,'stsm_load_admin_styles_scripts' ) );
+		add_action('wp_footer', array($this,'stsm_scripts_footer'));
 
-		add_filter( 'the_content', array( $this, 'append_ss_html' ) );
+		add_filter( 'the_content', array( $this, 'append_stsm_html' ) );
 
-		add_shortcode('ss-share', array($this,'ss_html_markup' ));
+		add_shortcode('stsm-share', array($this,'stsm_html_markup' ));
 
-		register_activation_hook( __FILE__, array( $this, 'ss_load_defaults' ) );
-
-	}
-
-	public function ss_load_admin_styles_scripts(){
-
-		wp_enqueue_style( 'ss-share-admin', plugins_url('css/admin.css',__FILE__) );
-		wp_enqueue_script( 'ss-admin-js', plugins_url('js/admin.js',__FILE__) );
+		register_activation_hook( __FILE__, array( $this, 'stsm_load_defaults' ) );
 
 	}
 
-	public function ss_load_styles_scripts(){
+	public function stsm_load_admin_styles_scripts(){
 
-		$ss_options = get_option('ss_options');
+		wp_enqueue_style( 'stsm-share-admin', plugins_url('css/admin.css',__FILE__) );
+		wp_enqueue_script( 'stsm-admin-js', plugins_url('js/admin.js',__FILE__) );
 
-		wp_enqueue_style( 'ss-share-main', plugins_url('css/style.css',__FILE__) );
+	}
+
+	public function stsm_load_styles_scripts(){
+
+		$stsm_options = get_option('stsm_options');
+
+		wp_enqueue_style( 'stsm-share-main', plugins_url('css/style.css',__FILE__) );
 		
-		if( !empty($ss_options['ss-select-animations']) && in_array('360-rotation', $ss_options['ss-select-animations']) && $ss_options['ss-select-style'] != 'horizontal-with-count' )
+		if( !empty($stsm_options['stsm-select-animations']) && in_array('360-rotation', $stsm_options['ss-select-animations']) && $stsm_options['ss-select-style'] != 'horizontal-with-count' )
 		wp_enqueue_style( '360-rotation', plugins_url('css/360-rotate.css',__FILE__) );
 		
-		if( !empty($ss_options['ss-select-animations']) && in_array('tooltip', $ss_options['ss-select-animations']) && $ss_options['ss-select-style'] != 'horizontal-with-count' ){
+		if( !empty($stsm_options['stsm-select-animations']) && in_array('tooltip', $stsm_options['ss-select-animations']) && $stsm_options['ss-select-style'] != 'horizontal-with-count' ){
 			wp_enqueue_style( 'tooltipster-css', plugins_url('css/tooltipster.css',__FILE__) );
 			wp_enqueue_script( 'tooltipster-js', plugins_url('js/jquery.tooltipster.js',__FILE__), array('jquery') );
 		}		
 
 	}
 
-	public function ss_scripts_footer() {
+	public function stsm_scripts_footer() {
 
-		$ss_options = get_option('ss_options');
-		if( ($ss_options['ss-select-style'] == 'horizontal-with-count') || ($ss_options['ss-select-style'] == 'small-buttons')){
+		$stsm_options = get_option('stsm_options');
+		if( ($stsm_options['stsm-select-style'] == 'horizontal-with-count') || ($stsm_options['stsm-select-style'] == 'small-buttons')){
 		
-			$services_scripts_arr = get_services_js_arr($ss_options);
-			if( !empty($ss_options['ss-selected-services']) ){
-				foreach ($ss_options['ss-selected-services'] as $service) {
+			$services_scripts_arr = get_services_js_arr($stsm_options);
+			if( !empty($stsm_options['stsm-selected-services']) ){
+				foreach ($stsm_options['stsm-selected-services'] as $service) {
 					echo $services_scripts_arr[$service];
 				}
 			}
 
 		}
 
-		if( !empty($ss_options['ss-select-animations']) && in_array('tooltip', $ss_options['ss-select-animations']) && $ss_options['ss-select-style'] != 'horizontal-with-count' && $ss_options['ss-select-style'] != 'small-buttons' ){
+		if( !empty($stsm_options['stsm-select-animations']) && in_array('tooltip', $stsm_options['stsm-select-animations']) && $stsm_options['stsm-select-style'] != 'horizontal-with-count' && $stsm_options['stsm-select-style'] != 'small-buttons' ){
 			?>
 			<script>
 				jQuery(document).ready(function($) {
@@ -88,73 +88,73 @@ class share_to_social_media{
 		}	
 	}
 	
-	public function ss_get_services() {
+	public function stsm_get_services() {
 		return array('facebook', 'twitter', 'googleplus', 'digg', 'reddit', 'linkedin', 'stumbleupon', 'tumblr', 'pinterest', 'email' );
 	}
 
-	public function ss_load_defaults(){
+	public function stsm_load_defaults(){
 
-		update_option( 'ss_options', $this->get_defaults() );
+		update_option( 'stsm_options', $this->get_defaults() );
 
 	}
 
-	public function append_ss_html( $content ) {
+	public function append_stsm_html( $content ) {
 
-		$ss_options = $this->get_ss_options('ss_options');
+		$stsm_options = $this->get_stsm_options('stsm_options');
 		
 		// get current post's id
 		global $post;
 		$post_id = $post->ID;
 		
-		if( in_array($post_id,explode(',',$ss_options['ss-exclude-on'])) )
+		if( in_array($post_id,explode(',',$stsm_options['stsm-exclude-on'])) )
 			return $content;
-		if( is_home() && !in_array( 'home', (array)$ss_options['ss-show-on'] ) )
+		if( is_home() && !in_array( 'home', (array)$stsm_options['stsm-show-on'] ) )
 			return $content;
-		if( is_single() && !in_array( 'posts', (array)$ss_options['ss-show-on'] ) )
+		if( is_single() && !in_array( 'posts', (array)$stsm_options['stsm-show-on'] ) )
 			return $content;
-		if( is_page() && !in_array( 'pages', (array)$ss_options['ss-show-on'] ) )
+		if( is_page() && !in_array( 'pages', (array)$stsm_options['stsm-show-on'] ) )
 			return $content;
-		if( is_archive() && !in_array( 'archive', (array)$ss_options['ss-show-on'] ) )
+		if( is_archive() && !in_array( 'archive', (array)$stsm_options['stsm-show-on'] ) )
 			return $content;
 		
-		$ss_html_markup = $this->ss_html_markup();
+		$stsm_html_markup = $this->stsm_html_markup();
 		
-		if( is_array($ss_options['ss-select-position']) && in_array('before-content', $ss_options['ss-select-position']) )
-			$content = $ss_html_markup.$content;
-		if( is_array($ss_options['ss-select-position']) && in_array('after-content', (array)$ss_options['ss-select-position']) )
-			$content .= $ss_html_markup;
+		if( is_array($stsm_options['stsm-select-position']) && in_array('before-content', $stsm_options['stsm-select-position']) )
+			$content = $stsm_html_markup.$content;
+		if( is_array($stsm_options['stsm-select-position']) && in_array('after-content', (array)$stsm_options['stsm-select-position']) )
+			$content .= $stsm_html_markup;
 		return $content;
 
 	}
 	
 	public function get_defaults($preset=true) {
 		return array(
-				'ss-select-style' => 'horizontal-w-c-circular',
-				'ss-available-services' => $this->ss_get_services(),
-				'ss-selected-services' => $preset ? $this->ss_get_services() : array(),
-				'ss-select-position' => $preset ? array('before-content') : array(),
-				'ss-show-on' => $preset ? array('pages', 'posts') : array(),
-				'ss-select-animations' => $preset ? array('tooltip') : array(),
-				'ss-exclude-on' => '',
+				'stsm-select-style' => 'horizontal-w-c-circular',
+				'stsm-available-services' => $this->ss_get_services(),
+				'stsm-selected-services' => $preset ? $this->ss_get_services() : array(),
+				'stsm-select-position' => $preset ? array('before-content') : array(),
+				'stsm-show-on' => $preset ? array('pages', 'posts') : array(),
+				'stsm-select-animations' => $preset ? array('tooltip') : array(),
+				'stsm-exclude-on' => '',
 				);
 		
 	}
 	
-	public function get_ss_options() {
-		return array_merge( $this->get_defaults(false), get_option('ss_options') );
+	public function get_stsm_options() {
+		return array_merge( $this->get_defaults(false), get_option('stsm_options') );
 	}
 
-	public function ss_html_markup() {
+	public function stsm_html_markup() {
 		
-		$ss_options = $this->get_ss_options('ss_options');
+		$stsm_options = $this->get_stsm_options('stsm_options');
 		
-		if( $ss_options['ss-select-style'] == 'horizontal-with-count' ){
+		if( $stsm_options['stsm-select-style'] == 'horizontal-with-count' ){
 			
 			$class = '';
 			$service_markup_arr = get_buttons_with_c_markup_arr();			
 
 		}
-		elseif( $ss_options['ss-select-style'] == 'small-buttons' ){
+		elseif( $stsm_options['stsm-select-style'] == 'small-buttons' ){
 			
 			$class = '';
 			$service_markup_arr = get_small_buttons_markup_arr();			
@@ -163,11 +163,11 @@ class share_to_social_media{
 		else{
 
 			$class = '';
-			if ( $ss_options['ss-select-style'] == 'horizontal-w-c-square' )
+			if ( $stsm_options['stsm-select-style'] == 'horizontal-w-c-square' )
 				$class = 'horizontal-w-c-square';
-			elseif( $ss_options['ss-select-style'] == 'horizontal-w-c-r-border' )
+			elseif( $stsm_options['stsm-select-style'] == 'horizontal-w-c-r-border' )
 				$class = 'horizontal-w-c-r-border';
-			elseif( $ss_options['ss-select-style'] == 'horizontal-w-c-circular' )
+			elseif( $stsm_options['stsm-select-style'] == 'horizontal-w-c-circular' )
 				$class = 'horizontal-w-c-circular';	
 			$class .= ' s-share-w-c';
 
@@ -177,7 +177,7 @@ class share_to_social_media{
 
 		$html_markup = '';
 		foreach ($service_markup_arr as $key => $value) {
-			if( in_array($key, (array)$ss_options['ss-selected-services']) ){
+			if( in_array($key, (array)$stsm_options['stsm-selected-services']) ){
 				$html_markup .= $value;
 			}
 		}
@@ -185,35 +185,35 @@ class share_to_social_media{
 		
 	}
 
-	public function ss_register_settings(){
+	public function stsm_register_settings(){
 
-		register_setting( 'ss_options', 'ss_options' );
+		register_setting( 'stsm_options', 'stsm_options' );
 
 	}
 	
 	/*
 	 * Add sub menu page in Settings for configuring plugin
 	 */
-	public function ss_register_submenu(){
+	public function stsm_register_submenu(){
 
-		add_submenu_page( 'options-general.php', 'Share To Social Media Settings', 'Share To Social Media', 'activate_plugins', 'ss-share-settings', array( $this, 'ss_submenu_page' ) );
+		add_submenu_page( 'options-general.php', 'Share To Social Media Settings', 'Share To Social Media', 'activate_plugins', 'stsm-share-settings', array( $this, 'stsm_submenu_page' ) );
 
 	}
 
 	/*
 	 * Callback for add_submenu_page for generating markup of page
 	 */
-	public function ss_submenu_page() {
+	public function stsm_submenu_page() {
 		?>
 		<div class="wrap">
 			<h2>Settings</h2>
 			<form method="POST" action="options.php">
-			<?php settings_fields('ss_options'); ?>
+			<?php settings_fields('stsm_options'); ?>
 			<?php
-			$ss_options = get_option('ss_options');
-			$ss_options['ss-available-services'] = $this->ss_get_services();
+			$stsm_options = get_option('stsm_options');
+			$stsm_options['stsm-available-services'] = $this->stsm_get_services();
 			?>
-			<?php admin_form($ss_options); ?>
+			<?php admin_form($stsm_options); ?>
 		</div>
 		<?php
 	}
