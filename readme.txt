@@ -1,6 +1,6 @@
 === Share To Sm ===
 Contributors: shoaiyb
-Tags: social media share, facebook share, twitter share, google plus, linkedin, reddit, stumbleupon, tumblr, simple social share, simple social sharing, social sharing
+Tags: social media share, facebook share, twitter share, google plus, linkedin, reddit, stumbleupon, tumblr, simple social share, social sharing
 Requires at least: 2.3
 Tested up to: 5.6
 Stable tag: 1.0
@@ -11,7 +11,7 @@ A simple social sharing plugin that adds a list of social media sharing buttons 
 
 == Description ==
 
-As the name says, Share To Sm is a very simple to use social media sharing plugin for your WordPress website. No registration or ID's required. It's absolutely free. Just install and get started.
+Share To Sm is a very simple to use social media sharing plugin for your WordPress website. No registration or ID's required. It's absolutely free. Just install and get started.
 
 = Features =
 * Five different types of styles: small buttons with / without share count and the usual 32 x 32 icons with square / rounded-border / circular icons.
