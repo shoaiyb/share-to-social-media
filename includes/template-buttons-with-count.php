@@ -26,7 +26,7 @@ function get_buttons_with_c_markup_arr(){
 													<script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
 												</div>',
 								'email' => '<div class="s-single-share">
-												<a href="mailto:?Subject='.str_replace(' ', '%20', get_the_title()).'&Body='.str_replace(' ', '%20', 'Here is the link to the article: '.get_permalink()).'" title="Email" class="s3-email"><img src="'.plugins_url( '../images/share-email.png' , __FILE__ ).'"></a>
+												<a href="mailto:?Subject='.str_replace(' ', '%20', get_the_title()).'&Body='.str_replace(' ', '%20', 'Here is the link to the article: '.get_permalink()).'" title="Email" class="stsm-email"><img src="'.plugins_url( '../images/share-email.png' , __FILE__ ).'"></a>
 											</div>'
 							);
 	return $service_markup_arr;
