@@ -1,4 +1,4 @@
-=== Share To Sm ===
+=== Share To Social Media ===
 Contributors: shoaiyb
 Tags: social media share, facebook share, twitter share, google plus, linkedin, reddit, stumbleupon, tumblr, simple social share, social sharing
 Requires at least: 2.3
@@ -7,11 +7,11 @@ Stable tag: 1.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A simple social sharing plugin that adds a list of social media sharing buttons on your website.
+A simple social sharing plugin for displaying social media sharing buttons and icons on your website.
 
 == Description ==
 
-Share To Sm is a very simple to use social media sharing plugin for your WordPress website. No registration or ID's required. It's absolutely free. Just install and get started.
+Share To Social Media is a very simple to use social media sharing plugin for displaying social media buttons and icons on your WordPress website. No registration or ID's required. It's absolutely free. Just install and get started.
 
 = Features =
 * Five different types of styles: small buttons with / without share count and the usual 32 x 32 icons with square / rounded-border / circular icons.
@@ -24,9 +24,9 @@ Share To Sm is a very simple to use social media sharing plugin for your WordPre
 
 == Installation ==
 = via ftp =
-1. Upload `Share To Sm` to the `/wp-content/plugins/` directory.
+1. Upload `Share To Social Media` to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Go to Settings -> Share To Sm to add social sharing buttons on your website.
+3. Go to Settings -> Share To Social Media to add social sharing buttons on your website.
 = via admin dashboard =
 1. Download the .zip file of the plugin.
 2. Log in to your WordPress dashboard and navigate to Plugins -> Add New.
