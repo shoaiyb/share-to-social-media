@@ -1,5 +1,5 @@
-=== Simple Social Share ===
-Contributors: perials.com
+=== Ss Share ===
+Contributors: shoaiyb
 Tags: social media, social media share, facebook share, twitter share, google plus, linkedin, reddit, stumbleupon, tumblr, simple social share, simple social sharing, social sharing
 Requires at least: 2.3
 Tested up to: 4.4.1
@@ -30,7 +30,7 @@ As the name says, Simple Social Share is a very simple to use social media shari
 4. Now in Settings->Simple Social Share select how you want to display the social media icons
 
 == Frequently Asked Questions ==
-If you have any questions, we'd love to hear from you. Email us: info@perials.com
+If you have any questions, I'd love to hear from you. Email me: support@shoaiybsysa.ga
 
 == Screenshots ==
 1. Admin panel
@@ -39,15 +39,3 @@ If you have any questions, we'd love to hear from you. Email us: info@perials.co
 4. Front End appearance for square button style
 5. Front End appearance for rounded corner button style
 6. Front End appearance for circular buttons
-
-== Changelog ==
-
-= Simple Social Share v1.0 =
-* Added plugin to WordPress repository
-
-= Simple Social Share v2.0 =
-* Added Pinterest
-
-= Simple Social Share v3.0 =
-* Added option to exclude post
-* Fixed a small bug in shortcode
