@@ -4,7 +4,7 @@
  * Plugin URI: https://shoaiybsysa.ga/
  * Description: A simple plugin for displaying social media icons to share Post/Page content
  * Version: 1.0
- * Author: shoaiyb
+ * Author: shoaiyb sysa
  * Author URI: https://shoaiybsysa.ga
  * License: GPL2
  */
