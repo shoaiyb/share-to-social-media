@@ -37,31 +37,31 @@ iframe.twitter-share-button #widget{ width: auto !important; display: inline-blo
 	border-radius: 50%;
 	border-right: 2px;
 }
-.s-share-w-c a.s3-facebook{
+.s-share-w-c a.stsm-facebook{
 	background-position: 0 640px;
 }
-.s-share-w-c a.s3-twitter{
+.s-share-w-c a.stsm-twitter{
 	background-position: 0 96px;
 }
-.s-share-w-c a.s3-google-plus{
+.s-share-w-c a.stsm-google-plus{
 	background-position: 0 512px;
 }
-.s-share-w-c a.s3-digg{
+.s-share-w-c a.stsm-digg{
 	background-position: 0 704px;
 }
-.s-share-w-c a.s3-reddit{
+.s-share-w-c a.stsm-reddit{
 	background-position: 0 192px;
 }
-.s-share-w-c a.s3-linkedin{
+.s-share-w-c a.stsm-linkedin{
 	background-position: 0 480px;
 }
-.s-share-w-c a.s3-stumbleupon{
+.s-share-w-c a.stsm-stumbleupon{
 	background-position: 0 160px;
 }
-.s-share-w-c a.s3-tumblr{
+.s-share-w-c a.stsm-tumblr{
 	background-position: 0 128px;
 }
-.s-share-w-c a.s3-email{
+.s-share-w-c a.stsm-email{
 	background-position: 0 416px;
 }
 .s-share-w-c .pinit-btn-div{
