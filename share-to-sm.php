@@ -196,7 +196,7 @@ class share_to_sm{
 	 */
 	public function ss_register_submenu(){
 
-		add_submenu_page( 'options-general.php', 'Ss Share settings', 'Ss Share', 'activate_plugins', 'ss-share-settings', array( $this, 'ss_submenu_page' ) );
+		add_submenu_page( 'options-general.php', 'Share To Sm Settings', 'Share To Sm', 'activate_plugins', 'ss-share-settings', array( $this, 'ss_submenu_page' ) );
 
 	}
 
