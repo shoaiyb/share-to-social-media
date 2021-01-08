@@ -1,4 +1,4 @@
-=== Ss Share ===
+=== Share To Ss ===
 Contributors: shoaiyb
 Tags: social media, social media share, facebook share, twitter share, google plus, linkedin, reddit, stumbleupon, tumblr, simple social share, simple social sharing, social sharing
 Requires at least: 2.3
@@ -11,7 +11,7 @@ A simple social sharing plugin that adds a list of social media sharing buttons 
 
 == Description ==
 
-As the name says, Simple Social Share is a very simple to use social media sharing plugin for your WordPress blog. No registration, no ID's required. It's absolutely free. Just install and get going.
+As the name says, Share To Ss is a very simple to use social media sharing plugin for your WordPress blog. No registration, no ID's required. It's absolutely free. Just install and get going.
 
 = Features =
 * Five different types of styles: small buttons with / without share count and the usual 32 x 32 icons with square / rounded-border / circular icons.
