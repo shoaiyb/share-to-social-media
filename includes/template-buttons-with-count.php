@@ -1,4 +1,7 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 function get_buttons_with_c_markup_arr(){
 	$service_markup_arr = array(
 								'facebook' => '<div class="s-single-share">
