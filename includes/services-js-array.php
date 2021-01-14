@@ -1,4 +1,7 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 function get_services_js_arr( $stsm_option = array() ){
 	$service_js_arr = array(
 								'facebook' => '<div id="fb-root"></div>
