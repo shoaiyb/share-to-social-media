@@ -1,4 +1,7 @@
 <?php
+
+ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 function admin_form( $stsm_options ){
 	?>	
 		<table class="form-table stsm-settings-table">
