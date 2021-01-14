@@ -1,4 +1,7 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 function get_buttons_w_c_markup_arr(){
 	$service_markup_arr = array(
 								'facebook' => '<a href="http://www.facebook.com/sharer.php?u='.get_permalink().'" target="_blank" title="Share to Facebook" class="stsm-facebook hint--top"></a>',
