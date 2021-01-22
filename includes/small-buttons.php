@@ -2,7 +2,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-function get_small_buttons_markup_arr(){
+function get_small_buttons_markup_arr( $stsm_options ){
 	$service_markup_arr = array(
 								'facebook' => '<div class="s-single-share">
 												<div class="fb-share-button" data-href="'.get_permalink().'" data-type="button"></div>
