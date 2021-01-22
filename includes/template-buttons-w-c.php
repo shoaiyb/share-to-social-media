@@ -2,7 +2,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-function get_buttons_w_c_markup_arr(){
+function get_buttons_w_c_markup_arr( $stsm_options ){
 	$service_markup_arr = array(
 								'facebook' => '<a href="http://www.facebook.com/sharer.php?u='.get_permalink().'" target="_blank" title="Share to Facebook" class="stsm-facebook hint--top"></a>',
 								'twitter' => '<a href="http://twitter.com/intent/tweet?text='.get_the_title().'&url='.get_permalink().'" target="_blank"  title="Share to Twitter" class="stsm-twitter hint--top"></a>',
